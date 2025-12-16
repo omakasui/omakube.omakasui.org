@@ -28,7 +28,7 @@ const navItems = sortedPages.map((page) => {
   return {
     title: parsed.title,
     chapter: parsed.chapter,
-    href: `/docs/${cleanSlug}`,
+    href: `/manual/${cleanSlug}`,
     isActive: currentSlug === cleanSlug,
   };
 });
