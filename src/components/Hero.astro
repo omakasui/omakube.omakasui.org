@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.png";
+---
+
+<header
+  class="mb-6 px-0 py-4 text-center lg:mb-3"
+  aria-labelledby="header-heading"
+>
+  <h2 class="sr-only" id="header-heading">omakube - introduction</h2>
+  <Image
+    src={Logo}
+    alt="omakube logo"
+    class="text-primary mx-auto cursor-pointer opacity-90 transition-opacity duration-300 hover:opacity-100"
+    onclick={`window.location.href='/'`}
+  />
+  <p class="text-foreground-secondary text-[1.1rem] sm:text-[1.2rem]">
+    A fork of <a
+      href="https://omakub.org"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit Omakub's official website">Omakub</a
+    >, more flexible and refined.
+  </p>
+</header>

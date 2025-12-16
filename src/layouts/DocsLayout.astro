@@ -1,0 +1,92 @@
+---
+import Footer from "@/components/layout/Footer.astro";
+import Nav from "@/components/layout/Nav.astro";
+import MarkdownEnhancements from "@/components/MarkdownEnhancements.astro";
+import DocsSidebarLeft from "@/components/docs/DocsSidebarLeft.astro";
+import DocsSidebarRight from "@/components/docs/DocsSidebarRight.astro";
+import type { CollectionEntry } from "astro:content";
+
+import "@/styles/global.css";
+import "@/styles/docs.css";
+import "remark-github-blockquote-alert/alert.css";
+import "@/styles/markdown.css";
+
+interface Props {
+  title?: string;
+  currentSlug?: string;
+  entry?: CollectionEntry<"docsPages">;
+}
+
+const { title, currentSlug = "", entry } = Astro.props;
+
+// Set dynamic page title
+const pageTitle = `${title ? `${title} | ` : ""}Omakube - Manual`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Omakube - A fork of Omakub, more flexible and refined."
+    />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://omakube.omakasui.org" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Omakube - A fork of Omakub, more flexible and refined."
+    />
+    <meta
+      property="og:description"
+      content="A fork of Omakub, more flexible and refined."
+    />
+    <meta
+      property="og:image"
+      content="https://omakube.omakasui.org/og-image.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="omakube.omakasui.org" />
+    <meta property="twitter:url" content="https://omakube.omakasui.org" />
+    <meta
+      name="twitter:title"
+      content="Omakube - A fork of Omakub, more flexible and refined."
+    />
+    <meta
+      name="twitter:description"
+      content="A fork of Omakub, more flexible and refined."
+    />
+    <meta
+      name="twitter:image"
+      content="https://omakube.omakasui.org/og-image.png"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body
+    class="font-monospace bg-background text-foreground flex min-h-screen flex-col font-mono text-[14px] leading-[1.6]"
+  >
+    <Nav />
+
+    <div class="docs-container relative">
+      <DocsSidebarLeft currentSlug={currentSlug} />
+
+      <div class="docs-main lg:mr-64 lg:ml-64">
+        <slot />
+      </div>
+
+      {entry && <DocsSidebarRight entry={entry} />}
+    </div>
+
+    <MarkdownEnhancements />
+    <Footer />
+  </body>
+</html>

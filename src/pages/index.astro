@@ -1,0 +1,40 @@
+---
+import Hero from "@/components/Hero.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <Hero />
+
+  <section aria-labelledby="intro-heading">
+    <h2 class="sr-only" id="intro-heading">Introduction</h2>
+    <p class="text-foreground-secondary mt-6 mb-16 text-[1.1rem] leading-[1.8]">
+      <p>
+        You can turn your Ubuntu (24.04+) installation into a modern, elegant,
+        development-focused environment by running the following command in the
+        terminal:
+      </p>
+      <div
+        class="border-border bg-surface relative mx-0 my-6 flex items-center gap-4 rounded-sm border p-4"
+        role="group"
+        aria-label={`Installation command for omakube`}
+      >
+        <code
+          class="scrollbar-hide text-primary flex flex-1 items-center overflow-x-auto bg-none text-[0.9rem] whitespace-nowrap lg:overflow-visible"
+          aria-label="Installation command"
+          style="scrollbar-width: none; -ms-overflow-style: none;"
+        >
+          curl -fsSL https://omakube.omakasui.org/install.sh | sh
+        </code>
+        <button
+          class="border-border-light bg-background-tertiary text-foreground-secondary hover:bg-surface-hover hover:text-foreground-bright ml-8 flex shrink-0 cursor-pointer items-center justify-center rounded border px-4 py-2 text-[0.75rem] transition-colors"
+          onclick={`navigator.clipboard.writeText('curl -fsSL https://omakube.omakasui.org/install.sh | sh')`}
+          title="Copy to clipboard"
+          aria-label="Copy installation command to clipboard"
+        >
+          <i class="nf nf-md-content_copy"></i>
+        </button>
+      </div>
+    </p>
+  </section>
+</Layout>
