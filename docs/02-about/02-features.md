@@ -64,14 +64,12 @@ You can view the extra themes on the [dedicated page](https://omakasui.org/theme
 
 More GNOME extensions have been added to make using the overview and quick settings more pleasant, as well as some updates to existing ones.
 
-Specifically, [`Tactile`](https://extensions.gnome.org/extension/4548/tactile/)’s grid has been set to 4 columns to provide greater flexibility, the [`Quick Settings Tweaks`](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/) extension updates the user menu in the GNOME top bar and [`GNOME 4x UI Improvements`](https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/) has been included to bring more consistency to the overview.
+Specifically, [`Tactile`](https://extensions.gnome.org/extension/4548/tactile/)’s grid has been set to 4 columns to provide greater flexibility, [`Icon Launcher`](https://extensions.gnome.org/extension/9134/icon-launcher/) adds an icon to the top bar that launches the menu, the [`Quick Settings Tweaks`](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/) extension updates the user menu in the GNOME top bar and [`GNOME 4x UI Improvements`](https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/) has been included to bring more consistency to the overview.
 
-To these popular extensions, a new one has been added specifically for Omakube, [`Omakub Menu Topbar`](https://github.com/Kasui92/omakub-menu-topbar-extension) which adds an icon to the top bar that launches the menu.
-
-![Omakub Menu Topbar](/images/topbar-extension.png)
+![Icon Launcher](/images/topbar-extension.png)
 
 <p class="text-center">
-  <i>Omakub Menu Topbar</i>
+  <i>Icon Launcher in Omakub top bar</i>
 </p>
 
 ## Custom Plymouth and GDM3
