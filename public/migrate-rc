@@ -1,2 +1,2 @@
 OMAKUB_REF=omakub-migration
-eval "$(wget -qO- https://raw.githubusercontent.com/omakasui/omakube/dev/migrate.sh)"
+eval "$(wget -qO- https://raw.githubusercontent.com/omakasui/omakube/omakub-migration/migrate.sh)"
